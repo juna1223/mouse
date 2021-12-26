@@ -5,13 +5,33 @@ import pandas as pd
 import joblib
 
 def run_ml_app():
-    classifier = joblib.load('data/best_model.pkl')
-    scaler_X = joblib.load('data/scaler_X.pkl')
+    classifier = joblib.load('loan_data/best_model1.pkl')
+    scaler_X = joblib.load('loan_data/scaler_X1.pkl')
 
-    st.subheader('데이터를 입력하면 당뇨병을 예측!')
+    st.subheader('Loan status prediction')
+    df = pd.read_csv('loan_data/loan_train2.csv', encoding='ISO-8859-1')
 
-    # Pregnancies	Glucose	BloodPressure	SkinThickness	
-    # Insulin	BMI	DiabetesPedigreeFunction	Age
+    gender = st.radio('성별을 입력하세요.', ['남자', '여자'])
+    if gender == '남자' :
+        gender_number = 0
+    elif gender == '여자' :
+        gender_number = 1   
+    print(df.columns)
+    married = st.radio('결혼여부를 입력하세요.', ['Married', 'Not Married'])
+    if married == 'Not Married' :
+        married_number = 0
+    elif married == 'Married' :
+        married_number = 1
+    Dependents = st.sidebar.selectbox('메뉴', menu)
+
+
+
+
+
+
+
+
+
 
     pregnancies = st.number_input('임신횟수', min_value=0)
     glucose = st.number_input('Glucose', min_value=0)
