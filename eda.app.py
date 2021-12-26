@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def run_eda_app() :
-    st.subheader('데이터 분석')
+    st.subheader('Exploratory Data Analysis')
     
-    df = pd.read_csv('data/diabetes.csv')
+    df = pd.read_csv('loan_data/loan_train2.csv')
 
     st.dataframe( df )
 

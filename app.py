@@ -9,17 +9,17 @@ from eda_app import run_eda_app
 from ml_app import run_ml_app
 
 def main():
-    menu = ['홈', '데이터분석', '인공지능']
+    menu = ['Home', 'EDA', 'Prediction']
 
-    choice = st.sidebar.selectbox('메뉴 선택', menu)
+    choice = st.sidebar.selectbox('menu choice', menu)
 
-    if choice == '홈' :
-        st.subheader('당뇨병 데이터 분석 및 예측앱')
+    if choice == 'Home' :
+        st.subheader('대출 가능 여부 예측')
 
-    elif choice == '데이터분석' :
+    elif choice == 'EDA' :
         run_eda_app()
 
-    elif choice == '인공지능' :
+    elif choice == 'Prediction' :
         run_ml_app()
 
 if __name__ == '__main__' :
