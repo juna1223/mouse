@@ -81,9 +81,9 @@ def run_ml_app():
 
         print(y_pred[0])
         if y_pred[0] == 0 :
-            st.write('예측 결과는, 대출이 불가능 합니다.')
+            st.error('예측 결과는, 대출이 불가능 합니다.')
         else :
-            st.write('예측 결과는, 대출이 가능 합니다.')
+            st.success('예측 결과는, 대출이 가능 합니다.')
 
 
     

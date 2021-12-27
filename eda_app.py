@@ -11,10 +11,6 @@ def run_eda_app() :
 
     st.dataframe( df )
 
-    st.subheader('Nan 데이터 확인')
-
-    st.dataframe( df.isna().sum())
-
     st.subheader('각 컬럼별 히스토그램 확인')
 
     selected_column = st.selectbox('컬럼을 선택하세요', df.columns)
