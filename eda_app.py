@@ -72,24 +72,3 @@ def run_eda_app() :
     # 그 사람의 데이터를 화면에 보여주는 기능 개발
 
     ### 문자열 데이터가 아닌, 컬럼들만 가져오는 코드!!! ###
-    st.subheader('최대 최소에 해당되는 사람 정보 찾기')
-    print( df.columns )
-
-    print( df.dtypes != object )
-
-    print( df.columns[ df.dtypes != object ] )
-
-    number_colums = df.columns[ df.dtypes != object ] 
-
-    selected_minmax_column = st.selectbox('컬럼 선택', number_colums)
-
-    # 선택한 컬럼의 최소값에 해당되는 사람의 데이터 출력
-    # df[selected_minmax_column] == df[selected_minmax_column].min()
-    min_data = df.loc[ df[selected_minmax_column] == df[selected_minmax_column].min() , ]
-    st.dataframe(min_data)
-
-    # 선탁한 컬럼의 최대값에 해당되는 사람의 데이터 출력
-    # df[selected_minmax_column] == df[selected_minmax_column].max()
-    max_data = df.loc[ df[selected_minmax_column] == df[selected_minmax_column].max()  , ]
-    st.dataframe(max_data)
-
